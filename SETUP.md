@@ -76,3 +76,4 @@ Framer Motion animations can be adjusted in each component file. All animations 
 - The design follows the exact specifications: elite, architectural, cinematic, performance-driven
 - Mobile-first responsive design is built-in
 
+

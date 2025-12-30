@@ -562,23 +562,23 @@
         }
 
         .facility-card:nth-child(1)::before {
-            background-image: url('https://images.unsplash.com/photo-1622279457488736-62f8f24c2a65?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-image: url('images/red-clay-courts.jpg');
         }
 
         .facility-card:nth-child(2)::before {
-            background-image: url('https://images.unsplash.com/photo-1534158914592-062992fbe900?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-image: url('images/grass-courts.jpg');
         }
 
         .facility-card:nth-child(3)::before {
-            background-image: url('https://images.unsplash.com/photo-1576678927484-cc907957088c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-image: url('images/jogging-track.jpg');
         }
 
         .facility-card:nth-child(4)::before {
-            background-image: url('https://images.unsplash.com/photo-1540497077202-7c8a3999166f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-image: url('images/athlete-club-rooms.jpg');
         }
 
         .facility-card:nth-child(5)::before {
-            background-image: url('https://images.unsplash.com/photo-1605296867304-46d5465a13f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-image: url('images/cold-plunge.jpg');
         }
 
         .facility-card:nth-child(6)::before {
@@ -640,11 +640,11 @@
         }
 
         .court-card:nth-child(1)::before {
-            background-image: url('https://images.unsplash.com/photo-1622279457488736-62f8f24c2a65?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-image: url('images/red-clay-courts.jpg');
         }
 
         .court-card:nth-child(2)::before {
-            background-image: url('https://images.unsplash.com/photo-1534158914592-062992fbe900?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-image: url('images/grass-courts.jpg');
         }
 
         .court-card::after {
@@ -820,6 +820,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
+            align-items: start;
         }
 
         .membership-card {
@@ -827,7 +828,7 @@
             border: 2px solid rgba(245, 241, 232, 0.1);
             padding: 2rem;
             position: relative;
-            transition: all 0.3s;
+            transition: border-color 0.3s;
         }
 
         .membership-card:hover {
@@ -836,7 +837,6 @@
 
         .membership-card.featured {
             border-color: var(--clay-red);
-            transform: scale(1.05);
         }
 
         .membership-card .badge {
@@ -861,9 +861,26 @@
         }
 
         .membership-card .price {
+            font-size: 1rem;
+            color: var(--clay-red);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .membership-card .plan-description {
             font-size: 0.875rem;
             color: rgba(245, 241, 232, 0.6);
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .membership-card .plan-outcome {
+            font-size: 0.875rem;
+            color: rgba(245, 241, 232, 0.7);
+            margin-top: 1rem;
             margin-bottom: 1.5rem;
+            font-style: italic;
+            line-height: 1.6;
         }
 
         .membership-card .features {
@@ -1288,14 +1305,103 @@
             flex-wrap: wrap;
         }
 
-        /* Responsive */
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .mobile-menu-btn span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--sand);
+            transition: all 0.3s;
+        }
+
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 80px;
+            left: 0;
+            right: 0;
+            background: var(--charcoal);
+            border-top: 1px solid rgba(245, 241, 232, 0.1);
+            padding: 2rem;
+            z-index: 999;
+        }
+
+        .mobile-nav.active {
+            display: block;
+        }
+
+        .mobile-nav a {
+            display: block;
+            padding: 1rem 0;
+            color: var(--sand);
+            text-decoration: none;
+            font-size: 1.125rem;
+            border-bottom: 1px solid rgba(245, 241, 232, 0.1);
+        }
+
+        .mobile-nav .mobile-ctas {
+            margin-top: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .mobile-nav .mobile-ctas a {
+            border: none;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .mobile-nav .mobile-ctas .btn-primary {
+            background: var(--clay-red);
+        }
+
+        .mobile-nav .mobile-ctas .btn-secondary {
+            border: 1px solid rgba(245, 241, 232, 0.3);
+        }
+
+        /* Responsive - Tablet */
         @media (max-width: 1024px) {
             .nav-links {
                 display: none;
             }
 
+            .nav-ctas {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+            }
+
             .red-clay-code .container {
                 grid-template-columns: 1fr;
+            }
+
+            .red-clay-visual {
+                height: 400px;
             }
 
             .facility-card.large,
@@ -1307,36 +1413,211 @@
             .location-grid {
                 grid-template-columns: 1fr;
             }
+
+            .booking-content {
+                grid-template-columns: 1fr;
+            }
+
+            .section-header h2 {
+                font-size: clamp(2rem, 4vw, 4rem);
+            }
         }
 
+        /* Responsive - Mobile */
         @media (max-width: 768px) {
             .container {
-                padding: 0 1.5rem;
+                padding: 0 1.25rem;
             }
 
             section {
                 padding: 4rem 0;
             }
 
+            .nav-container {
+                padding: 0 1.25rem;
+            }
+
+            /* Hero */
             .hero h1 {
-                font-size: 3rem;
+                font-size: 2.5rem;
+                line-height: 1.15;
             }
 
             .hero p {
-                font-size: 1.125rem;
+                font-size: 1rem;
+                margin-bottom: 2rem;
             }
 
-            .courts-grid,
+            .hero-ctas {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .hero-ctas .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .scroll-indicator {
+                display: none;
+            }
+
+            /* Credibility Strip */
+            .credibility-strip .container {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            /* Red Clay Code */
+            .red-clay-visual {
+                height: 300px;
+            }
+
+            .red-clay-content h2 {
+                font-size: 2.5rem;
+            }
+
+            .principles-list li {
+                font-size: 1rem;
+            }
+
+            /* Facilities */
+            .facilities-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .facility-card {
+                min-height: 280px;
+            }
+
+            .facility-card h3 {
+                font-size: 1.5rem;
+            }
+
+            /* Courts */
+            .courts-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .court-card {
+                height: 450px;
+            }
+
+            .court-card h3 {
+                font-size: 2.5rem;
+            }
+
+            .court-card-content {
+                padding: 2rem;
+            }
+
+            /* Coaching */
             .programmes-grid {
                 grid-template-columns: 1fr;
             }
 
+            .programme-card {
+                padding: 1.5rem;
+            }
+
+            /* Train Recover */
+            .cycle-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cycle-item {
+                padding: 1.5rem;
+            }
+
+            /* Membership */
             .membership-grid {
                 grid-template-columns: 1fr;
             }
 
+            .membership-card {
+                padding: 1.5rem;
+            }
+
             .membership-card.featured {
                 transform: scale(1);
+            }
+
+            /* Booking */
+            .booking-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .contact-form {
+                padding: 1.5rem;
+            }
+
+            .whatsapp-card {
+                padding: 1.5rem;
+            }
+
+            /* Gallery */
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.5rem;
+            }
+
+            /* Location */
+            .location-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .location-map {
+                height: 300px;
+            }
+
+            /* FAQ */
+            .faq-question {
+                font-size: 1rem;
+                padding: 1.25rem 0;
+            }
+
+            /* Final CTA */
+            .final-cta h2 {
+                font-size: 2.5rem;
+            }
+
+            .final-cta .ctas {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .final-cta .ctas .btn {
+                width: 100%;
+            }
+        }
+
+        /* Responsive - Small Mobile */
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.75rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .info-box-content {
+                padding: 1.25rem;
+            }
+
+            .info-box-content h3 {
+                font-size: 1.25rem;
             }
         }
     </style>
@@ -1356,8 +1637,25 @@
                 <a href="#booking" class="btn-nav btn-nav-outline">Book a Tour</a>
                 <a href="#membership" class="btn-nav btn-nav-primary">Join as Founding Member</a>
             </div>
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobile-nav">
+        <a href="#facilities" class="mobile-nav-link">Facilities</a>
+        <a href="#coaching" class="mobile-nav-link">Coaching</a>
+        <a href="#membership" class="mobile-nav-link">Membership</a>
+        <a href="#location" class="mobile-nav-link">Location</a>
+        <div class="mobile-ctas">
+            <a href="#booking" class="btn-secondary">Book a Tour</a>
+            <a href="#membership" class="btn-primary">Join as Founding Member</a>
+        </div>
+    </div>
 
     <!-- Hero -->
     <section class="hero">
@@ -1614,54 +1912,99 @@
             </div>
             <div class="membership-grid">
                 <div class="membership-card">
-                    <h3>Individual</h3>
-                    <div class="price">Monthly</div>
+                    <h3>Young Adults</h3>
+                    <div class="price">Rs. 12,000 per month</div>
+                    <p class="plan-description">For players aged 18 and under</p>
                     <ul class="features">
-                        <li>Court access (clay & grass)</li>
-                        <li>Priority booking privileges</li>
-                        <li>Coaching session credits</li>
-                        <li>Recovery facilities access</li>
-                        <li>Guest passes (2/month)</li>
+                        <li>Up to 30 hours of court access</li>
+                        <li>Group coaching sessions, four days per week</li>
+                        <li>Three private coaching sessions per month</li>
+                        <li>Three guided stretching / physiotherapy sessions</li>
+                        <li>24/7 access to the jogging track</li>
+                        <li>Full access to club rooms</li>
+                        <li>Invitation to club events and activities</li>
                     </ul>
-                    <a href="#booking" class="btn btn-secondary">Apply</a>
-                </div>
-                <div class="membership-card">
-                    <h3>Family</h3>
-                    <div class="price">Monthly</div>
-                    <ul class="features">
-                        <li>All Individual benefits</li>
-                        <li>Up to 4 family members</li>
-                        <li>Junior programme access</li>
-                        <li>Extended guest privileges</li>
-                        <li>Family event participation</li>
-                    </ul>
-                    <a href="#booking" class="btn btn-secondary">Apply</a>
-                </div>
-                <div class="membership-card">
-                    <h3>Young Adult Programme</h3>
-                    <div class="price">Monthly</div>
-                    <ul class="features">
-                        <li>Full facility access</li>
-                        <li>Structured coaching programme</li>
-                        <li>Performance tracking</li>
-                        <li>Tournament preparation</li>
-                        <li>Recovery protocols included</li>
-                    </ul>
+                    <p class="plan-outcome">A structured pathway for young players to develop strong fundamentals, discipline, and confidence on court.</p>
                     <a href="#booking" class="btn btn-secondary">Apply</a>
                 </div>
                 <div class="membership-card featured">
-                    <div class="badge">Founding</div>
-                    <h3>Founding Member</h3>
-                    <div class="price">Lifetime</div>
+                    <div class="badge">Most Popular</div>
+                    <h3>Adults</h3>
+                    <div class="price">Rs. 20,000 per month</div>
+                    <p class="plan-description">For players aged 18 and above</p>
                     <ul class="features">
-                        <li>All Family benefits</li>
-                        <li>Lifetime membership</li>
-                        <li>Founding rates locked</li>
-                        <li>Exclusive events</li>
-                        <li>Priority court reservations</li>
-                        <li>Coaching programme included</li>
+                        <li>Up to 30 hours of court access</li>
+                        <li>Group coaching sessions, four days per week</li>
+                        <li>Three private coaching sessions per month</li>
+                        <li>Three guided stretching / physiotherapy sessions</li>
+                        <li>24/7 access to the jogging track</li>
+                        <li>Full access to club rooms</li>
+                        <li>Invitation to club events and activities</li>
+                        <li>Cold plunge access</li>
                     </ul>
+                    <p class="plan-outcome">Our most comprehensive membership, balancing training, recovery, and community.</p>
                     <a href="#booking" class="btn btn-primary">Apply</a>
+                </div>
+                <div class="membership-card">
+                    <h3>Seniors</h3>
+                    <div class="price">Rs. 15,000 per month</div>
+                    <p class="plan-description">For members aged 50 and above</p>
+                    <ul class="features">
+                        <li>Up to 30 hours of court access</li>
+                        <li>Ten tennis coaching sessions</li>
+                        <li>Ten physiotherapy / guided stretching sessions</li>
+                        <li>24/7 access to the jogging track</li>
+                        <li>Full access to club rooms</li>
+                        <li>Cold plunge access</li>
+                        <li>Specialised physiotherapy and mobility programmes</li>
+                        <li>Specialised tennis programmes designed for seniors</li>
+                    </ul>
+                    <p class="plan-outcome">A considered approach to movement, fitness, and enjoyment of the game — guided by expertise.</p>
+                    <a href="#booking" class="btn btn-secondary">Apply</a>
+                </div>
+                <div class="membership-card">
+                    <h3>Families</h3>
+                    <div class="price">Rs. 35,000 per month</div>
+                    <p class="plan-description">For families of 3–5 members</p>
+                    <ul class="features">
+                        <li>Up to 30 hours of shared court access</li>
+                        <li>Three private coaching sessions</li>
+                        <li>Three guided stretching / physiotherapy sessions</li>
+                        <li>24/7 access to the jogging track</li>
+                        <li>Full access to club rooms</li>
+                        <li>Cold plunge access</li>
+                    </ul>
+                    <p class="plan-outcome">Designed for families who value active time together within a refined club environment.</p>
+                    <a href="#booking" class="btn btn-secondary">Apply</a>
+                </div>
+                <div class="membership-card">
+                    <h3>Tennis Star Programme</h3>
+                    <div class="price">Rs. 25,000 per month</div>
+                    <p class="plan-description">Six‑month professional development programme</p>
+                    <ul class="features">
+                        <li>Professional coaching, four days per week</li>
+                        <li>One‑to‑one specialised tennis training tailored to individual potential</li>
+                        <li>Weekly performance and progress reviews</li>
+                        <li>Structured fitness and conditioning programme</li>
+                        <li>Dedicated physiotherapy and stretch coaching</li>
+                        <li>Full access to club rooms</li>
+                        <li>Cold plunge access</li>
+                        <li>24/7 jogging track access</li>
+                        <li>Exposure to professional athletic sponsorship opportunities</li>
+                    </ul>
+                    <p class="plan-outcome">A focused, high‑commitment programme for young players with competitive ambition.</p>
+                    <a href="#booking" class="btn btn-secondary">Apply</a>
+                </div>
+                <div class="membership-card">
+                    <h3>Runners</h3>
+                    <div class="price">Rs. 5,000 per month</div>
+                    <p class="plan-description">For members seeking structured access to movement and recovery beyond the courts</p>
+                    <ul class="features">
+                        <li>24/7 access to the 250m jogging track</li>
+                        <li>Club room access</li>
+                        <li>Stretch coach support</li>
+                    </ul>
+                    <a href="#booking" class="btn btn-secondary">Apply</a>
                 </div>
             </div>
         </div>
@@ -1879,6 +2222,23 @@
             } else {
                 navbar.classList.remove('scrolled');
             }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileNav = document.getElementById('mobile-nav');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileNav.classList.toggle('active');
+            mobileMenuBtn.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.mobile-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileNav.classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
+            });
         });
 
         // FAQ accordion
