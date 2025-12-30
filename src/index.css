@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-near-black text-sand font-sans antialiased;
+    font-feature-settings: "kern" 1;
+    text-rendering: optimizeLegibility;
+  }
+}
+
+@layer utilities {
+  .clay-texture {
+    position: relative;
+  }
+  
+  .clay-texture::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      repeating-linear-gradient(
+        0deg,
+        rgba(139, 69, 19, 0.03) 0px,
+        transparent 1px,
+        transparent 2px,
+        rgba(139, 69, 19, 0.03) 3px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        rgba(139, 69, 19, 0.03) 0px,
+        transparent 1px,
+        transparent 2px,
+        rgba(139, 69, 19, 0.03) 3px
+      );
+    pointer-events: none;
+    opacity: 0.08;
+    mix-blend-mode: multiply;
+  }
+  
+  .clay-overlay {
+    background: 
+      radial-gradient(circle at 20% 50%, rgba(139, 69, 19, 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(160, 82, 45, 0.05) 0%, transparent 50%);
+    mix-blend-mode: multiply;
+  }
+  
+  .angled-cut {
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 4vw), 0 100%);
+  }
+  
+  .angled-cut-reverse {
+    clip-path: polygon(0 4vw, 100% 0, 100% 100%, 0 100%);
+  }
+  
+  .text-shadow-clay {
+    text-shadow: 0 2px 20px rgba(139, 69, 19, 0.3);
+  }
+  
+  .club-stamp {
+    @apply text-xs uppercase tracking-widest font-semibold text-sand/60;
+    letter-spacing: 0.15em;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8B4513;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A0522D;
+}
+
