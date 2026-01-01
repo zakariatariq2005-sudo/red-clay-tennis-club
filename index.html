@@ -420,17 +420,28 @@
         }
 
         .red-clay-visual {
-            display: flex;
-            flex-direction: column;
-            background: var(--charcoal);
+            height: 600px;
+            position: relative;
+            background: linear-gradient(to bottom right, rgba(160, 82, 45, 0.2), rgba(122, 58, 31, 0.2));
+        }
+
+        .red-clay-visual::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url('https://images.unsplash.com/photo-1622279457488736-62f8f24c2a65?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.4;
+            mix-blend-mode: overlay;
         }
 
         .red-clay-visual .info-box {
+            position: absolute;
+            inset: 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 2rem;
-            background: rgba(26, 26, 26, 0.8);
         }
 
         .info-box-content {
@@ -1618,6 +1629,7 @@
             <div class="logo">RED CLAY</div>
             <ul class="nav-links">
                 <li><a href="#facilities">Facilities</a></li>
+                <li><a href="#coaching">Coaching</a></li>
                 <li><a href="#membership">Membership</a></li>
                 <li><a href="#location">Location</a></li>
             </ul>
@@ -1636,6 +1648,7 @@
     <!-- Mobile Navigation -->
     <div class="mobile-nav" id="mobile-nav">
         <a href="#facilities" class="mobile-nav-link">Facilities</a>
+        <a href="#coaching" class="mobile-nav-link">Coaching</a>
         <a href="#membership" class="mobile-nav-link">Membership</a>
         <a href="#location" class="mobile-nav-link">Location</a>
         <div class="mobile-ctas">
@@ -1653,6 +1666,59 @@
             <div class="hero-ctas">
                 <a href="#booking" class="btn btn-primary">Book a Tour</a>
                 <a href="#membership" class="btn btn-secondary">View Memberships</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div></div>
+        </div>
+    </section>
+
+    <!-- Credibility Strip -->
+    <section class="credibility-strip">
+        <div class="container">
+            <span>Founding Memberships Now Open</span>
+            <span>Coaching-Led Programmes</span>
+            <span>Tournament-Ready Courts</span>
+            <span>Performance & Recovery Integrated</span>
+        </div>
+    </section>
+
+    <!-- Red Clay Code -->
+    <section class="red-clay-code clay-texture">
+        <div class="container">
+            <div class="red-clay-visual">
+                <div class="info-box">
+                    <div class="info-box-content">
+                        <h3>Clay Benefits</h3>
+                        <div class="benefit-item">
+                            <span>Bounce Height:</span>
+                            <span style="font-weight: 600;">Higher</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span>Movement:</span>
+                            <span style="font-weight: 600;">Sliding Enabled</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span>Endurance:</span>
+                            <span style="font-weight: 600;">Enhanced</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span>Impact:</span>
+                            <span style="font-weight: 600;">Reduced</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="red-clay-content">
+                <span class="club-stamp">THE PHILOSOPHY</span>
+                <h2>The Red Clay Code</h2>
+                <p>Red clay is not a surface, it's a training philosophy. Every slide, every rally, every point builds the athlete.</p>
+                <ul class="principles-list">
+                    <li>Longer rallies. Better conditioning.</li>
+                    <li>Movement mastery through sliding.</li>
+                    <li>Tactical patience and shot selection.</li>
+                    <li>A surface that trains the athlete — not just the stroke.</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -1734,6 +1800,67 @@
                             <span class="court-attribute">Speed & footwork</span>
                         </div>
                         <p>Fast-surface training for explosive play. Develop serve-and-volley precision. Train reaction speed and quick footwork. Master first-strike tennis.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coaching -->
+    <section id="coaching" class="coaching">
+        <div class="container">
+            <div class="section-header">
+                <span class="club-stamp">COACHING</span>
+                <h2>Coaching & Programmes</h2>
+                <p>Structured, outcome-oriented training. Not casual lessons. Performance development.</p>
+            </div>
+            <div class="programmes-grid">
+                <div class="programme-card">
+                    <span class="club-stamp">PRIVATE COACHING</span>
+                    <h3>One-on-One Performance</h3>
+                    <div class="focus">
+                        <div class="focus-label">Focus</div>
+                        <div class="focus-text">Technique refinement, tactical development, match preparation</div>
+                    </div>
+                    <div class="outcome">
+                        <div class="outcome-label">Outcome</div>
+                        <div class="outcome-text">Personalized training plans aligned with competitive goals.</div>
+                    </div>
+                </div>
+                <div class="programme-card">
+                    <span class="club-stamp">PRIVATE COACHING</span>
+                    <h3>Elite Player Development</h3>
+                    <div class="focus">
+                        <div class="focus-label">Focus</div>
+                        <div class="focus-text">Advanced shot selection, movement patterns, mental conditioning</div>
+                    </div>
+                    <div class="outcome">
+                        <div class="outcome-label">Outcome</div>
+                        <div class="outcome-text">Tournament-ready performance through systematic improvement.</div>
+                    </div>
+                </div>
+                <div class="programme-card">
+                    <span class="club-stamp">SPECIALISED PROGRAMMES</span>
+                    <h3>Young Adult Performance</h3>
+                    <div class="focus">
+                        <div class="focus-label">Focus</div>
+                        <div class="focus-text">Technique, tactics, conditioning</div>
+                    </div>
+                    <div class="outcome">
+                        <div class="outcome-label">Outcome</div>
+                        <div class="outcome-text">Structured development pathway for competitive tennis.</div>
+                    </div>
+                </div>
+                <div class="programme-card">
+                    <span class="club-stamp">SPECIALISED PROGRAMMES</span>
+                    <h3>Junior Academy</h3>
+                    <div class="focus">
+                        <div class="focus-label">Focus</div>
+                        <div class="focus-text">Fundamentals, movement, match play</div>
+                    </div>
+                    <div class="outcome">
+                        <div class="outcome-label">Outcome</div>
+                        <div class="outcome-text">Foundation building for long-term athletic development.</div>
                     </div>
                 </div>
             </div>
@@ -1927,6 +2054,42 @@
                             Chat on WhatsApp
                         </a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery angled-cut-reverse">
+        <div class="container">
+            <div class="section-header">
+                <span class="club-stamp">GALLERY</span>
+                <h2>Curated Moments</h2>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1622279457488736-62f8f24c2a65?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Clay court close-up">
+                    <div class="label">Clay Detail</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1534158914592-062992fbe900?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Court lines and net">
+                    <div class="label">Court Lines</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1622163642999-9586b5e2b0c1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Night lighting">
+                    <div class="label">Night Lighting</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Athlete room">
+                    <div class="label">Recovery</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1576678927484-cc907957088c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Jogging track">
+                    <div class="label">Track</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Coaching moment">
+                    <div class="label">Coaching</div>
                 </div>
             </div>
         </div>
